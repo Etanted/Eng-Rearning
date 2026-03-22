@@ -17,6 +17,9 @@ const App = (() => {
      초기화
   ───────────────────────────────────────── */
   function init() {
+    // 데이터 파일 로드 완료 후 빈 Day를 플레이스홀더로 채움
+    initPlaceholders();
+
     // 음성 로드
     if (Audio.isSupported()) Audio.loadVoices();
 

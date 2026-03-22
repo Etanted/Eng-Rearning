@@ -48,7 +48,7 @@
         </div>
         <div class="stat-divider">/</div>
         <div class="stat-item">
-          <span class="stat-num">3,000</span>
+          <span class="stat-num">4,000</span>
           <span class="stat-label">전체 단어</span>
         </div>
       </div>
@@ -75,7 +75,7 @@
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-header">
         <h2>학습 일정</h2>
-        <span class="day-count">150일 완성</span>
+        <span class="day-count">200일 완성</span>
       </div>
 
       <div class="sidebar-filter">
@@ -213,8 +213,19 @@
   </nav>
 
   <!-- ===== 스크립트 ===== -->
-  <script src="js/data.js"></script>
-  <script src="js/examples2.js"></script>
+  <!-- 1) 데이터 코어 (VOCA_DATA 초기화, TOTAL_DAYS=200, 유틸 함수) -->
+  <script src="js/data_core.js"></script>
+  <!-- 2) 단어 데이터 (50일 단위 분할) -->
+  <script src="js/data_days_001_050.js"></script>
+  <script src="js/data_days_051_100.js"></script>
+  <script src="js/data_days_101_150.js"></script>
+  <script src="js/data_days_151_200.js"></script>
+  <!-- 3) 두 번째 예문 (50일 단위 분할) -->
+  <script src="js/examples2_days_001_050.js"></script>
+  <script src="js/examples2_days_051_100.js"></script>
+  <script src="js/examples2_days_101_150.js"></script>
+  <script src="js/examples2_days_151_200.js"></script>
+  <!-- 4) 앱 로직 -->
   <script src="js/storage.js"></script>
   <script src="js/audio.js"></script>
   <script src="js/ui.js"></script>

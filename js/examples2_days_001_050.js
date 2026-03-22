@@ -1,0 +1,131 @@
+/**
+ * examples2_days_001_050.js — Day 1~50 두 번째 예문 데이터
+ * Eng-Learning 생활회화 & TOEIC 스마트 단어장
+ *
+ * ✅ 완성: Day 1~5 (100개 예문)
+ * 📝 준비중: Day 6~50
+ *
+ * 키 형식: '{day}_{wordIndex}' (0-based)
+ * 값 형식: { example2: "영문", example2Kr: "한국어 번역" }
+ *
+ * 추가 방법:
+ *   Object.assign(EXAMPLES2, {
+ *     '6_0': { example2: "...", example2Kr: "..." },
+ *     '6_1': { example2: "...", example2Kr: "..." },
+ *     // ... Day 6의 20개 단어 예문
+ *   });
+ */
+
+const EXAMPLES2 = {
+
+  // ── Day 1: 생활회화 기초 동사 ──
+  '1_0':  { example2: "He greeted his neighbors every morning.",         example2Kr: "그는 매일 아침 이웃들에게 인사했다." },
+  '1_1':  { example2: "She ordered a salad and a glass of water.",       example2Kr: "그녀는 샐러드와 물 한 잔을 주문했다." },
+  '1_2':  { example2: "I reserved a hotel room for the weekend.",        example2Kr: "주말을 위해 호텔 방을 예약했다." },
+  '1_3':  { example2: "My friend recommended this restaurant.",          example2Kr: "친구가 이 식당을 추천해 줬다." },
+  '1_4':  { example2: "I prefer working in the morning.",                example2Kr: "나는 아침에 일하는 것을 선호한다." },
+  '1_5':  { example2: "Would you mind opening the window?",              example2Kr: "창문을 열어도 될까요?" },
+  '1_6':  { example2: "We appreciate your patience.",                    example2Kr: "기다려 주셔서 감사합니다." },
+  '1_7':  { example2: "He apologized for the misunderstanding.",         example2Kr: "그는 오해에 대해 사과했다." },
+  '1_8':  { example2: "She suggested trying a different approach.",      example2Kr: "그녀는 다른 접근 방식을 시도해보자고 제안했다." },
+  '1_9':  { example2: "We all agreed to meet at 7 pm.",                  example2Kr: "우리는 모두 오후 7시에 만나기로 동의했다." },
+  '1_10': { example2: "I disagree with that decision.",                  example2Kr: "나는 그 결정에 동의하지 않는다." },
+  '1_11': { example2: "Can you manage to arrive by noon?",               example2Kr: "정오까지 도착할 수 있나요?" },
+  '1_12': { example2: "Let me check the schedule first.",                example2Kr: "먼저 일정을 확인해 볼게요." },
+  '1_13': { example2: "He can handle the pressure well.",                example2Kr: "그는 압박을 잘 처리할 수 있다." },
+  '1_14': { example2: "She arranged the flowers beautifully.",           example2Kr: "그녀는 꽃을 아름답게 배열했다." },
+  '1_15': { example2: "Can I borrow your umbrella?",                     example2Kr: "우산을 빌려도 될까요?" },
+  '1_16': { example2: "He lent his car to his brother.",                 example2Kr: "그는 동생에게 차를 빌려줬다." },
+  '1_17': { example2: "Don't miss this great opportunity.",              example2Kr: "이 좋은 기회를 놓치지 마세요." },
+  '1_18': { example2: "I'll wait for you outside the building.",         example2Kr: "건물 밖에서 기다릴게요." },
+  '1_19': { example2: "Don't hurry — we have plenty of time.",           example2Kr: "서두르지 마세요 — 시간이 충분해요." },
+
+  // ── Day 2: 생활회화 핵심 표현 ──
+  '2_0':  { example2: "I'll definitely call you back later.",            example2Kr: "나중에 꼭 다시 전화할게요." },
+  '2_1':  { example2: "Actually, I've been there before.",               example2Kr: "사실, 나는 전에 거기 가본 적이 있다." },
+  '2_2':  { example2: "Basically, the plan is to save money.",           example2Kr: "기본적으로, 계획은 돈을 절약하는 것이다." },
+  '2_3':  { example2: "You're exactly right about that.",                example2Kr: "그 점에 대해 당신이 정확히 맞습니다." },
+  '2_4':  { example2: "She'll probably be home by 6.",                   example2Kr: "그녀는 아마 6시까지 집에 올 것이다." },
+  '2_5':  { example2: "Honestly, I need more time to decide.",           example2Kr: "솔직히, 나는 결정하는 데 더 많은 시간이 필요해." },
+  '2_6':  { example2: "The answer is simply not good enough.",           example2Kr: "그 대답은 단순히 충분하지 않다." },
+  '2_7':  { example2: "I especially enjoyed the last chapter.",          example2Kr: "나는 특히 마지막 장이 마음에 들었다." },
+  '2_8':  { example2: "I haven't been sleeping well recently.",          example2Kr: "나는 최근에 잠을 잘 못 자고 있다." },
+  '2_9':  { example2: "He finally got the job he wanted.",               example2Kr: "그는 마침내 원하던 직장을 얻었다." },
+  '2_10': { example2: "The lights suddenly went out.",                   example2Kr: "갑자기 불이 꺼졌다." },
+  '2_11': { example2: "I nearly fell asleep during the lecture.",        example2Kr: "나는 강의 중에 거의 잠들 뻔했다." },
+  '2_12': { example2: "She clearly explained the instructions.",         example2Kr: "그녀는 지침을 명확하게 설명했다." },
+  '2_13': { example2: "I fully support your decision.",                  example2Kr: "나는 당신의 결정을 완전히 지지합니다." },
+  '2_14': { example2: "He hardly ever complains.",                       example2Kr: "그는 거의 불평하지 않는다." },
+  '2_15': { example2: "Take the train instead of driving.",              example2Kr: "운전하는 대신 기차를 타세요." },
+  '2_16': { example2: "Meanwhile, the team was still working.",          example2Kr: "그동안, 팀은 여전히 일하고 있었다." },
+  '2_17': { example2: "Leave now, otherwise you'll miss it.",            example2Kr: "지금 떠나세요, 그렇지 않으면 놓칠 거예요." },
+  '2_18': { example2: "It's a long way; however, it's worth it.",        example2Kr: "먼 길이지만 그만한 가치가 있다." },
+  '2_19': { example2: "She trained hard and therefore won.",             example2Kr: "그녀는 열심히 훈련했고 따라서 우승했다." },
+
+  // ── Day 3: 고등학교 필수 동사 I ──
+  '3_0':  { example2: "He abandoned his old habits for good.",           example2Kr: "그는 예전 습관을 완전히 버렸다." },
+  '3_1':  { example2: "The law was abolished after protests.",           example2Kr: "항의 후에 그 법이 폐지되었다." },
+  '3_2':  { example2: "Children absorb new languages quickly.",          example2Kr: "아이들은 새로운 언어를 빠르게 습득한다." },
+  '3_3':  { example2: "Technology has accelerated our lives.",           example2Kr: "기술은 우리의 삶을 가속화시켰다." },
+  '3_4':  { example2: "He acknowledged the team's hard work.",           example2Kr: "그는 팀의 노고를 인정했다." },
+  '3_5':  { example2: "She acquired the language in just one year.",     example2Kr: "그녀는 단 1년 만에 그 언어를 습득했다." },
+  '3_6':  { example2: "The vaccine activates the immune system.",        example2Kr: "백신은 면역 체계를 활성화한다." },
+  '3_7':  { example2: "Everyone admires his dedication.",                example2Kr: "모든 사람이 그의 헌신에 감탄한다." },
+  '3_8':  { example2: "Lack of sleep affects your concentration.",       example2Kr: "수면 부족은 집중력에 영향을 미친다." },
+  '3_9':  { example2: "Pets are not allowed in this area.",              example2Kr: "이 지역에서는 반려동물이 허용되지 않는다." },
+  '3_10': { example2: "The plan was altered at the last minute.",        example2Kr: "계획은 마지막 순간에 변경되었다." },
+  '3_11': { example2: "The news amazed everyone in the room.",           example2Kr: "그 소식은 방 안의 모든 사람을 놀라게 했다." },
+  '3_12': { example2: "She avoids crowds whenever possible.",            example2Kr: "그녀는 가능하면 군중을 피한다." },
+  '3_13': { example2: "He blamed the traffic for his lateness.",         example2Kr: "그는 늦은 것에 대해 교통을 탓했다." },
+  '3_14': { example2: "A good breakfast boosts your productivity.",      example2Kr: "좋은 아침 식사는 생산성을 높인다." },
+  '3_15': { example2: "He calculated the distance carefully.",           example2Kr: "그는 거리를 신중하게 계산했다." },
+  '3_16': { example2: "The camera captured the perfect moment.",         example2Kr: "카메라는 완벽한 순간을 포착했다." },
+  '3_17': { example2: "His recklessness caused an accident.",            example2Kr: "그의 무모함이 사고를 야기했다." },
+  '3_18': { example2: "She claimed the award was unfair.",               example2Kr: "그녀는 그 상이 불공정하다고 주장했다." },
+  '3_19': { example2: "Combine flour, eggs, and milk to make batter.",   example2Kr: "밀가루, 달걀, 우유를 합쳐 반죽을 만드세요." },
+
+  // ── Day 4: TOEIC 빈출 명사 I ──
+  '4_0':  { example2: "The agenda for today's meeting has changed.",     example2Kr: "오늘 회의의 안건이 변경되었다." },
+  '4_1':  { example2: "Her proposal received quick approval.",           example2Kr: "그녀의 제안은 빠른 승인을 받았다." },
+  '4_2':  { example2: "The report's attachment includes all data.",      example2Kr: "보고서의 첨부 파일에 모든 데이터가 포함된다." },
+  '4_3':  { example2: "The bank opened a new branch downtown.",          example2Kr: "은행은 시내에 새 지점을 열었다." },
+  '4_4':  { example2: "We set a tight budget for the project.",          example2Kr: "우리는 프로젝트에 엄격한 예산을 설정했다." },
+  '4_5':  { example2: "The best candidate was hired immediately.",       example2Kr: "가장 적합한 지원자가 즉시 채용되었다." },
+  '4_6':  { example2: "The cargo was delayed at the port.",              example2Kr: "화물은 항구에서 지연되었다." },
+  '4_7':  { example2: "Our main client requested a meeting.",            example2Kr: "주요 고객이 회의를 요청했다." },
+  '4_8':  { example2: "The complaint was handled professionally.",       example2Kr: "불만은 전문적으로 처리되었다." },
+  '4_9':  { example2: "Both parties signed the contract.",               example2Kr: "양측이 계약서에 서명했다." },
+  '4_10': { example2: "We must meet the deadline without fail.",         example2Kr: "우리는 반드시 마감 기한을 맞춰야 한다." },
+  '4_11': { example2: "Free delivery is available on orders over $50.",  example2Kr: "50달러 이상 주문 시 무료 배송이 가능하다." },
+  '4_12': { example2: "The IT department solved the issue quickly.",     example2Kr: "IT 부서가 문제를 빠르게 해결했다." },
+  '4_13': { example2: "Weekend discount is available for members.",      example2Kr: "주말 할인은 회원에게 제공됩니다." },
+  '4_14': { example2: "Keep all financial documents organized.",         example2Kr: "모든 재정 서류를 정리해 두세요." },
+  '4_15': { example2: "Submit an expense report every month.",           example2Kr: "매달 경비 보고서를 제출하세요." },
+  '4_16': { example2: "The new facility opens next month.",              example2Kr: "새 시설은 다음 달에 문을 연다." },
+  '4_17': { example2: "Please provide feedback on the product.",         example2Kr: "제품에 대한 피드백을 제공해 주세요." },
+  '4_18': { example2: "Visit our headquarters for a tour.",              example2Kr: "견학을 위해 본사를 방문하세요." },
+  '4_19': { example2: "The invoice must be paid within 30 days.",        example2Kr: "청구서는 30일 이내에 납부해야 한다." },
+
+  // ── Day 5: TOEIC 빈출 동사 I ──
+  '5_0':  { example2: "The venue can accommodate a large audience.",     example2Kr: "그 장소는 많은 관중을 수용할 수 있다." },
+  '5_1':  { example2: "The team accomplished a remarkable feat.",        example2Kr: "팀은 놀라운 성과를 달성했다." },
+  '5_2':  { example2: "The report addresses several key issues.",        example2Kr: "보고서는 몇 가지 핵심 문제를 다룬다." },
+  '5_3':  { example2: "He adjusted his schedule to fit the meeting.",    example2Kr: "그는 회의에 맞게 일정을 조정했다." },
+  '5_4':  { example2: "The winner was announced at the ceremony.",       example2Kr: "수상자는 시상식에서 발표되었다." },
+  '5_5':  { example2: "The bank authorized the transaction.",            example2Kr: "은행이 거래를 승인했다." },
+  '5_6':  { example2: "The event was cancelled at short notice.",        example2Kr: "행사가 짧은 예고 기간 후 취소되었다." },
+  '5_7':  { example2: "They charge a fee for late returns.",             example2Kr: "그들은 연체 반납에 수수료를 청구한다." },
+  '5_8':  { example2: "He completed the marathon in record time.",       example2Kr: "그는 기록적인 시간에 마라톤을 완주했다." },
+  '5_9':  { example2: "Students must comply with school rules.",         example2Kr: "학생들은 학교 규칙을 준수해야 한다." },
+  '5_10': { example2: "He confirmed the appointment by phone.",          example2Kr: "그는 전화로 약속을 확인했다." },
+  '5_11': { example2: "He coordinates between the two teams.",           example2Kr: "그는 두 팀 사이를 조율한다." },
+  '5_12': { example2: "The forms were distributed to all students.",     example2Kr: "양식은 모든 학생들에게 배포되었다." },
+  '5_13': { example2: "The expert estimated the damage at $5,000.",      example2Kr: "전문가는 피해액을 5천 달러로 추산했다." },
+  '5_14': { example2: "Let's finalize the contract this week.",          example2Kr: "이번 주에 계약을 마무리합시다." },
+  '5_15': { example2: "Please forward the message to everyone.",         example2Kr: "모든 사람에게 메시지를 전달해 주세요." },
+  '5_16': { example2: "They hired an experienced consultant.",           example2Kr: "그들은 경험 많은 컨설턴트를 고용했다." },
+  '5_17': { example2: "An inspector was sent to inspect the site.",      example2Kr: "검사관이 현장 점검을 위해 보내졌다." },
+  '5_18': { example2: "We will notify you when it's ready.",             example2Kr: "준비가 되면 알려드리겠습니다." },
+  '5_19': { example2: "The bank will process your request shortly.",     example2Kr: "은행이 곧 귀하의 요청을 처리할 것입니다." }
+
+};
