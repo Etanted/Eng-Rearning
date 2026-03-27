@@ -304,15 +304,16 @@ const App = (() => {
     const newC = container.cloneNode(true);
     container.parentNode.replaceChild(newC, container);
 
-    newC.addEventListener('click', e => {
-      // 일자 필터 버튼
-      const dayBtn = e.target.closest('.wl-day-btn');
-      if (dayBtn) {
-        wlFilterDay = parseInt(dayBtn.dataset.day, 10);
+    const daySelect = newC.querySelector('#wlDaySelect');
+    if (daySelect) {
+      daySelect.addEventListener('change', e => {
+        wlFilterDay = parseInt(e.target.value, 10);
         UI.renderWordList(wlFilterDay);
         bindWordListEvents();
-        return;
-      }
+      });
+    }
+
+    newC.addEventListener('click', e => {
       // 체크 버튼
       const checkBtn = e.target.closest('.wl-check-btn');
       if (checkBtn) {

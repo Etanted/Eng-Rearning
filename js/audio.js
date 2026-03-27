@@ -37,7 +37,7 @@ const Audio = (() => {
 
     const utterance = new SpeechSynthesisUtterance(word);
     utterance.lang = lang;
-    utterance.rate = 0.85;
+    utterance.rate = 1.0;//0.85;
     utterance.pitch = 1.0;
     utterance.volume = 1.0;
 

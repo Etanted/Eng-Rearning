@@ -165,7 +165,8 @@ const UI = (() => {
   ───────────────────────────────────────── */
   function updateGlobalProgress() {
     const total   = Storage.getTotalCheckedCount();
-    const pct     = Math.round((total / 6000) * 100 * 10) / 10;
+    const totalWords = TOTAL_DAYS * 20;
+    const pct     = Math.round((total / totalWords) * 100 * 10) / 10;
 
     setTextContent('totalChecked', total.toLocaleString());
     const bar = document.getElementById('progressBar');
@@ -219,18 +220,24 @@ const UI = (() => {
     const modalBody = document.getElementById('modalBody');
     if (!modalBody) return;
 
+    // 상단 topbar: Day 태그 + 체크 버튼
+    const dayTagEl = document.getElementById('modalDayTag');
+    if (dayTagEl) dayTagEl.textContent = `Day ${day}`;
+
+    const checkWrap = document.getElementById('modalCheckWrap');
+    if (checkWrap) {
+      checkWrap.innerHTML = `<button id="modalCheckBtn"
+        style="width:36px;height:36px;border-radius:50%;border:2px solid ${checked ? 'var(--success)' : 'var(--border)'};background:${checked ? 'var(--success)' : 'transparent'};color:${checked ? '#fff' : 'transparent'};display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s ease;flex-shrink:0;"
+        data-day="${day}" data-idx="${idx}" title="학습 완료 체크">
+        ${ICONS.check}
+      </button>`;
+    }
+
     modalBody.innerHTML = `
-      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
-        <div>
-          <div class="modal-word">${escapeHtml(w.word)}</div>
-          <div class="modal-pronunciation">${escapeHtml(w.pron || '')}</div>
-          ${w.pos ? `<span class="modal-pos">${escapeHtml(w.pos)}</span>` : ''}
-        </div>
-        <button class="check-btn${checked ? ' checked': ''}" id="modalCheckBtn"
-          style="position:static;flex-shrink:0;width:36px;height:36px;border-radius:50%;border:2px solid ${checked ? 'var(--success)':'var(--border)'};background:${checked ? 'var(--success)':'transparent'};color:${checked ? '#fff':'transparent'};display:flex;align-items:center;justify-content:center;"
-          data-day="${day}" data-idx="${idx}" title="학습 완료 체크">
-          ${ICONS.check}
-        </button>
+      <div>
+        <div class="modal-word">${escapeHtml(w.word)}</div>
+        <div class="modal-pronunciation">${escapeHtml(w.pron || '')}</div>
+        ${w.pos ? `<span class="modal-pos">${escapeHtml(w.pos)}</span>` : ''}
       </div>
 
       <button class="modal-audio-btn" id="modalAudioBtn" data-word="${escapeAttr(w.word)}" data-example="${escapeAttr(w.example || '')}">
@@ -301,10 +308,13 @@ const UI = (() => {
     const allWords = getAllWords();
     const filtered = filterDay > 0 ? allWords.filter(w => w.day === filterDay) : allWords;
 
-    let dayFilterHtml = `<button class="wl-day-btn ${filterDay === 0 ? 'active' : ''}" data-day="0">전체</button>`;
-    for (let d = 1; d <= 10; d++) {
-      dayFilterHtml += `<button class="wl-day-btn ${filterDay === d ? 'active' : ''}" data-day="${d}">Day ${d}</button>`;
+    let dayFilterHtml = `<select class="wl-day-select" id="wlDaySelect"><option value="0"${filterDay === 0 ? ' selected' : ''}>📋 전체 (${TOTAL_DAYS}일 / ${allWords.length}단어)</option>`;
+    for (let d = 1; d <= TOTAL_DAYS; d++) {
+      if (!VOCA_DATA[d]?.words?.length) continue;
+      const th = VOCA_DATA[d].theme || '';
+      dayFilterHtml += `<option value="${d}"${filterDay === d ? ' selected' : ''}>Day ${d} — ${escapeHtml(th)}</option>`;
     }
+    dayFilterHtml += `</select>`;
 
     let currentDayMark = 0;
     let rowsHtml = '';
@@ -349,17 +359,18 @@ const UI = (() => {
 
     const checkedMap = Storage.getDayCheckedMap();
     const totalChecked = Storage.getTotalCheckedCount();
-    const pct = Math.round((totalChecked / 6000) * 100 * 10) / 10;
+    const totalWords = TOTAL_DAYS * 20;
+    const pct = Math.round((totalChecked / totalWords) * 100 * 10) / 10;
 
     let daysStarted = 0, daysComplete = 0;
-    for (let d = 1; d <= 10; d++) {
+    for (let d = 1; d <= TOTAL_DAYS; d++) {
       const cnt = parseInt(checkedMap[d] || 0);
       if (cnt > 0) daysStarted++;
       if (cnt >= 20) daysComplete++;
     }
 
     let heatmapHtml = '';
-    for (let d = 1; d <= 300; d++) {
+    for (let d = 1; d <= TOTAL_DAYS; d++) {
       const dayData = VOCA_DATA[d] || { words: [] };
       const wc = dayData.words.length;
       const checked = parseInt(checkedMap[d] || 0);
@@ -373,7 +384,7 @@ const UI = (() => {
       heatmapHtml += `<div class="${cls}" title="Day ${d} (${checked}/${wc > 0 ? wc : '준비중'})" data-day="${d}"></div>`;
     }
 
-    const dayBarsHtml = Array.from({length: 10}, (_, i) => {
+    const dayBarsHtml = Array.from({length: TOTAL_DAYS}, (_, i) => {
       const d = i + 1;
       const dayData = VOCA_DATA[d] || { theme: '', words: [] };
       const wc = dayData.words.length;
@@ -396,11 +407,11 @@ const UI = (() => {
         <div class="pg-stat-card"><div class="pg-stat-icon">✅</div><div class="pg-stat-num">${daysComplete}</div><div class="pg-stat-label">완료 일수</div></div>
       </div>
       <div class="pg-overall-bar-wrap">
-        <div class="pg-overall-label">전체 진행률 (${totalChecked.toLocaleString()} / 6,000 단어)</div>
+        <div class="pg-overall-label">전체 진행률 (${totalChecked.toLocaleString()} / ${totalWords.toLocaleString()} 단어)</div>
         <div class="pg-overall-bar-bg"><div class="pg-overall-bar" style="width:${Math.min(pct,100)}%"></div></div>
       </div>
       <div class="pg-heatmap-section">
-        <h3 class="pg-section-title">일자별 학습 현황 (Day 1 → 300)</h3>
+        <h3 class="pg-section-title">일자별 학습 현황 (Day 1 → ${TOTAL_DAYS})</h3>
         <div class="pg-legend">
           <span class="pg-legend-item"><span class="pg-cell pg-done" style="width:14px;height:14px;display:inline-block;"></span> 완료</span>
           <span class="pg-legend-item"><span class="pg-cell pg-partial" style="width:14px;height:14px;display:inline-block;"></span> 진행중</span>
@@ -410,7 +421,7 @@ const UI = (() => {
         <div class="pg-heatmap" id="pgHeatmap">${heatmapHtml}</div>
       </div>
       <div class="pg-day-list-section">
-        <h3 class="pg-section-title">Day별 진행 상세 (Day 1~10)</h3>
+        <h3 class="pg-section-title">Day별 진행 상세 (Day 1~${TOTAL_DAYS})</h3>
         <div class="pg-day-bars" id="pgDayBars">${dayBarsHtml}</div>
       </div>`;
   }

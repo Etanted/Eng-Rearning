@@ -173,7 +173,13 @@
   <!-- ===== 단어 상세 모달 ===== -->
   <div class="modal-overlay" id="wordModal" role="dialog" aria-modal="true" style="display:none">
     <div class="modal-box">
-      <button class="modal-close" id="modalClose" aria-label="닫기">✕</button>
+      <div class="modal-topbar">
+        <span id="modalDayTag" class="modal-day-tag"></span>
+        <div class="modal-topbar-actions">
+          <div id="modalCheckWrap"></div>
+          <button class="modal-close" id="modalClose" aria-label="닫기">✕</button>
+        </div>
+      </div>
       <div class="modal-body" id="modalBody">
         <!-- JS로 동적 생성 -->
       </div>
