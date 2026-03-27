@@ -1,6 +1,6 @@
 /**
  * data_core.js — 핵심 데이터 구조 & 유틸리티
- * Eng-Learning 생활회화 & TOEIC 스마트 단어장 (총 200일 × 20단어 = 4,000단어)
+ * Eng-Learning 생활회화 & TOEIC 스마트 단어장 (총 205일 × 20단어 = 4,100단어)
  *
  * 로드 순서:
  *   1) data_core.js          ← 이 파일 (먼저 로드)
@@ -8,15 +8,16 @@
  *   3) data_days_051_100.js  ← Day 51~100 실제 단어
  *   4) data_days_101_150.js  ← Day 101~150 실제 단어
  *   5) data_days_151_200.js  ← Day 151~200 실제 단어
- *   6) examples2_days_*.js   ← 두 번째 예문 파일들
- *   7) storage.js ~ app.js
+ *   6) data_days_201_250.js  ← Day 201~205 전치사 핵심
+ *   7) examples2_days_*.js   ← 두 번째 예문 파일들
+ *   8) storage.js ~ app.js
  */
 
 /** 전체 단어 데이터 컨테이너 (각 day 파일에서 Object.assign으로 채워짐) */
 const VOCA_DATA = {};
 
 /** 전체 학습 일수 */
-const TOTAL_DAYS = 200;
+const TOTAL_DAYS = 205;
 
 /**
  * Day별 테마명 (200일 전체 커리큘럼)
@@ -105,7 +106,12 @@ const DAY_THEMES_200 = [
   "수능 최종 점검 II",   "생활회화 최종 정리 I", "생활회화 최종 정리 II",
   "구동사 최종 정리",    "고급 어휘 최종 정리 I","고급 어휘 최종 정리 II",
   "실전 테스트 I",       "실전 테스트 II",        "실전 테스트 III",
-  "실전 테스트 IV",      "영어 완전정복 완성!"
+  "실전 테스트 IV",      "영어 완전정복 완성!",
+
+  // ── Days 201-205: 전치사 핵심 이미지 ──
+  "전치사 AT — 핵심 이미지 '지점'",   "전치사 ON — 핵심 이미지 '접촉'",
+  "전치사 IN — 핵심 이미지 '내부'",   "전치사 FOR·TO — '목적'과 '방향'",
+  "전치사 BY·WITH·FROM — 핵심 활용"
 ];
 
 /**
