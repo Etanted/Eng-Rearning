@@ -17,7 +17,7 @@
 const VOCA_DATA = {};
 
 /** 전체 학습 일수 */
-const TOTAL_DAYS = 205;
+const TOTAL_DAYS = 210;
 
 /**
  * Day별 테마명 (200일 전체 커리큘럼)
@@ -108,10 +108,17 @@ const DAY_THEMES_200 = [
   "실전 테스트 I",       "실전 테스트 II",        "실전 테스트 III",
   "실전 테스트 IV",      "영어 완전정복 완성!",
 
-  // ── Days 201-205: 전치사 핵심 이미지 ──
+  // ── Days 201-205: 전치사 핵심 이미지 I ──
   "전치사 AT — 핵심 이미지 '지점'",   "전치사 ON — 핵심 이미지 '접촉'",
   "전치사 IN — 핵심 이미지 '내부'",   "전치사 FOR·TO — '목적'과 '방향'",
-  "전치사 BY·WITH·FROM — 핵심 활용"
+  "전치사 BY·WITH·FROM — 핵심 활용",
+
+  // ── Days 206-210: 전치사 핵심 이미지 II ──
+  "전치사 OVER·UNDER·ABOVE·BELOW — 상하 이미지",
+  "전치사 BETWEEN·AMONG·AROUND — 공간 관계",
+  "전치사 BEFORE·AFTER·DURING — 시간 관계",
+  "전치사 THROUGH·ACROSS·ALONG — 통과·경로",
+  "전치사 AGAINST·DESPITE·WITHOUT — 대립·양보"
 ];
 
 /**

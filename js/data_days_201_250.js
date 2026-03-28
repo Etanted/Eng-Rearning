@@ -147,5 +147,181 @@ Object.assign(VOCA_DATA, {
       { word: "apart from",          pron: "/əˈpɑːrt frɒm/",         pos: "prep.ph.", meanings: ["~외에는", "~을 제외하고"],      example: "Apart from a minor spelling error, the report was exceptionally well written.",          exampleKr: "사소한 철자 오류 외에는, 그 보고서는 매우 잘 작성되었다." },
       { word: "far from",            pron: "/fɑːr frɒm/",             pos: "prep.ph.", meanings: ["전혀 ~이 아닌", "~에서 멀리"],  example: "The project outcome was far from perfect, but it taught the team valuable lessons.",      exampleKr: "프로젝트 결과는 전혀 완벽하지 않았지만, 팀에게 소중한 교훈을 가르쳐 주었다." }
     ]
+  },
+
+  // ─── Day 206: 전치사 OVER / UNDER / ABOVE / BELOW — 핵심 이미지 '상하(上下)' ───
+  //   OVER  → 상위(上) : ~의 위쪽, 넘어서, 초과
+  //   UNDER → 하위(下) : ~의 아래, 미만, 통제 아래
+  //   ABOVE → 초월(超) : 수치·위치가 ~보다 위
+  //   BELOW → 미달(未) : 수치·위치가 ~보다 아래
+  206: {
+    theme: "전치사 OVER·UNDER·ABOVE·BELOW — 상하 이미지",
+    words: [
+      // OVER (3 단어)
+      { word: "over time",         pron: "/ˈoʊvər taɪm/",        pos: "prep.ph.", meanings: ["시간이 지나면서", "점차"], example: "Over time, the small startup grew into a leading technology company.", exampleKr: "시간이 지나면서, 작은 스타트업은 선도적인 기술 회사로 성장했다." },
+      { word: "over and over",     pron: "/ˈoʊvər ənd ˈoʊvər/",  pos: "prep.ph.", meanings: ["반복해서", "거듭거듭"], example: "She practiced the difficult piano piece over and over until she mastered it.", exampleKr: "그녀는 어려운 피아노 곡을 완벽히 익힐 때까지 반복해서 연습했다." },
+      { word: "over the moon",     pron: "/ˈoʊvər ðə muːn/",     pos: "prep.ph.", meanings: ["몹시 기뻐하는", "기쁨에 넘친"], example: "She was over the moon when she found out she had been accepted to her dream university.", exampleKr: "그녀는 꿈에 그리던 대학에 합격했다는 사실을 알았을 때 몹시 기뻐했다." },
+      // UNDER (3 단어)
+      { word: "under pressure",    pron: "/ˈʌndər ˈpreʃər/",     pos: "prep.ph.", meanings: ["압박을 받아", "스트레스 아래"], example: "Good leaders remain calm and make wise decisions even under pressure.", exampleKr: "훌륭한 리더는 압박을 받는 상황에서도 침착하게 현명한 결정을 내린다." },
+      { word: "under way",         pron: "/ˈʌndər weɪ/",          pos: "prep.ph.", meanings: ["진행 중인", "이미 시작된"], example: "Preparations for the annual international conference are already well under way.", exampleKr: "연례 국제 회의 준비가 이미 한창 진행 중이다." },
+      { word: "under control",     pron: "/ˈʌndər kənˈtroʊl/",   pos: "prep.ph.", meanings: ["통제 중인", "제어되는"], example: "Firefighters worked tirelessly through the night to bring the blaze under control.", exampleKr: "소방관들은 화재를 진압하기 위해 밤새 쉬지 않고 일했다." },
+      // ABOVE (3 단어)
+      { word: "above all",         pron: "/əˈbʌv ɔːl/",           pos: "prep.ph.", meanings: ["무엇보다도", "특히"], example: "Above all, we value honesty and transparency in every business relationship.", exampleKr: "무엇보다도, 우리는 모든 비즈니스 관계에서 정직과 투명성을 중시한다." },
+      { word: "above average",     pron: "/əˈbʌv ˈævərɪdʒ/",     pos: "prep.ph.", meanings: ["평균 이상의", "수준급의"], example: "Her performance was consistently above average throughout the entire academic year.", exampleKr: "그녀의 성과는 학년 내내 꾸준히 평균 이상이었다." },
+      { word: "above board",       pron: "/əˈbʌv bɔːrd/",         pos: "prep.ph.", meanings: ["공정한", "정직한"], example: "The company's financial dealings are completely above board and independently audited.", exampleKr: "그 회사의 재무 거래는 완전히 공정하며 독립적으로 감사를 받는다." },
+      // BELOW (3 단어)
+      { word: "below zero",        pron: "/bɪˈloʊ ˈzɪroʊ/",      pos: "prep.ph.", meanings: ["영하의", "0 이하"], example: "Temperatures dropped below zero overnight, causing black ice on the roads.", exampleKr: "기온이 밤새 영하로 떨어져 도로에 블랙아이스가 생겼다." },
+      { word: "below average",     pron: "/bɪˈloʊ ˈævərɪdʒ/",    pos: "prep.ph.", meanings: ["평균 이하의", "부진한"], example: "The department's sales figures were below average for the third consecutive quarter.", exampleKr: "그 부서의 매출 수치는 3분기 연속으로 평균 이하였다." },
+      { word: "below the surface", pron: "/bɪˈloʊ ðə ˈsɜːrfɪs/", pos: "prep.ph.", meanings: ["표면 아래에", "내면에"], example: "Below the surface of her cheerful smile lay a deep sense of exhaustion.", exampleKr: "그녀의 밝은 미소 표면 아래에는 깊은 피로감이 숨어 있었다." },
+      // OVER 심화 (2 단어)
+      { word: "over the top",      pron: "/ˈoʊvər ðə tɒp/",      pos: "prep.ph.", meanings: ["지나친", "과도한"], example: "The decorations for the birthday party were a bit over the top, but everyone loved them.", exampleKr: "생일 파티 장식이 좀 과도했지만, 모두가 좋아했다." },
+      { word: "over the counter",  pron: "/ˈoʊvər ðə ˈkaʊntər/", pos: "prep.ph.", meanings: ["처방전 없이 살 수 있는", "장외의"], example: "This pain reliever is available over the counter at any pharmacy without a prescription.", exampleKr: "이 진통제는 처방전 없이 어느 약국에서나 구입할 수 있다." },
+      // UNDER 심화 (2 단어)
+      { word: "under the weather", pron: "/ˈʌndər ðə ˈweðər/",   pos: "prep.ph.", meanings: ["몸이 안 좋은", "컨디션이 나쁜"], example: "I'm feeling a bit under the weather today, so I'll be working from home.", exampleKr: "오늘 몸이 좀 안 좋아서 재택근무를 할 예정이에요." },
+      { word: "under the radar",   pron: "/ˈʌndər ðə ˈreɪdɑːr/", pos: "prep.ph.", meanings: ["남의 눈에 띄지 않게", "주목받지 않고"], example: "The young researcher's groundbreaking work flew under the radar for several years.", exampleKr: "그 젊은 연구자의 획기적인 연구는 몇 년 동안 주목을 받지 못했다." },
+      // ABOVE 심화 (2 단어)
+      { word: "above and beyond",  pron: "/əˈbʌv ənd bɪˈɒnd/",   pos: "prep.ph.", meanings: ["기대 이상으로", "훨씬 뛰어나게"], example: "The customer service team went above and beyond to resolve the complaint quickly.", exampleKr: "고객 서비스팀은 불만을 신속히 해결하기 위해 기대 이상으로 노력했다." },
+      { word: "above suspicion",   pron: "/əˈbʌv səˈspɪʃən/",    pos: "prep.ph.", meanings: ["의심할 여지가 없는", "결백한"], example: "As the lead investigator, she needed to be seen as completely above suspicion.", exampleKr: "수사 책임자로서, 그녀는 완전히 의심할 여지가 없는 것으로 보여야 했다." },
+      // BELOW 심화 (2 단어)
+      { word: "below par",         pron: "/bɪˈloʊ pɑːr/",         pos: "prep.ph.", meanings: ["기준 이하의", "미흡한"], example: "The golfer's final round was below par, but he still finished in third place overall.", exampleKr: "골퍼의 마지막 라운드는 기준 이하였지만, 그는 여전히 전체 3위로 마쳤다." },
+      { word: "below the belt",    pron: "/bɪˈloʊ ðə belt/",      pos: "prep.ph.", meanings: ["치사한", "비열한"], example: "Criticising his personal life during the debate was a remark clearly below the belt.", exampleKr: "토론 중 그의 사생활을 비판한 것은 명백히 치사한 발언이었다." }
+    ]
+  },
+
+  // ─── Day 207: 전치사 BETWEEN / AMONG / AROUND — 핵심 이미지 '공간 관계' ───
+  //   BETWEEN → 사이(間) : 둘 사이의 명확한 경계
+  //   AMONG   → 속(中)   : 셋 이상 사이, 무리 안에
+  //   AROUND  → 둘레(環) : 주위를 에워싸거나 돌아다님
+  207: {
+    theme: "전치사 BETWEEN·AMONG·AROUND — 공간 관계",
+    words: [
+      // BETWEEN (4 단어)
+      { word: "between the lines",   pron: "/bɪˈtwiːn ðə laɪnz/",   pos: "prep.ph.", meanings: ["행간을", "숨은 뜻을"], example: "Good readers learn to read between the lines to grasp the author's true intention.", exampleKr: "훌륭한 독자는 저자의 진짜 의도를 파악하기 위해 행간을 읽는 법을 배운다." },
+      { word: "between you and me",  pron: "/bɪˈtwiːn juː ənd miː/", pos: "prep.ph.", meanings: ["우리끼리 얘기지만", "비밀인데"], example: "Between you and me, I think the manager is planning to resign next month.", exampleKr: "우리끼리 얘기지만, 나는 그 부장이 다음 달에 사직할 계획이라고 생각해." },
+      { word: "between jobs",        pron: "/bɪˈtwiːn dʒɒbz/",       pos: "prep.ph.", meanings: ["이직 사이에", "실직 중인"], example: "While between jobs, she took an online course to upgrade her digital marketing skills.", exampleKr: "이직하는 사이에, 그녀는 디지털 마케팅 기술을 향상시키기 위해 온라인 강좌를 들었다." },
+      { word: "in between",          pron: "/ɪn bɪˈtwiːn/",           pos: "prep.ph.", meanings: ["그 사이에", "중간에"], example: "The workshop runs from nine to five with short breaks in between each session.", exampleKr: "워크숍은 9시부터 5시까지 진행되며 각 세션 사이에 짧은 휴식이 있다." },
+      // AMONG (4 단어)
+      { word: "among others",        pron: "/əˈmʌŋ ˈʌðərz/",         pos: "prep.ph.", meanings: ["그 중에서도", "특히"], example: "The festival featured performances by renowned artists, among others a world-famous violinist.", exampleKr: "그 페스티벌에는 저명한 예술가들의 공연이 있었으며, 그 중에서도 세계적으로 유명한 바이올리니스트가 있었다." },
+      { word: "among the best",      pron: "/əˈmʌŋ ðə best/",         pos: "prep.ph.", meanings: ["최고 수준에 속하는"], example: "This university's engineering programme is consistently ranked among the best in Asia.", exampleKr: "이 대학의 공학 프로그램은 아시아 최고 수준에 꾸준히 선정된다." },
+      { word: "among themselves",    pron: "/əˈmʌŋ ðemˈselvz/",      pos: "prep.ph.", meanings: ["그들끼리", "내부적으로"], example: "The board members disagreed among themselves about the direction of the new strategy.", exampleKr: "이사회 구성원들은 새 전략의 방향에 대해 내부적으로 의견이 달랐다." },
+      { word: "numbered among",      pron: "/ˈnʌmbərd əˈmʌŋ/",        pos: "prep.ph.", meanings: ["~중의 하나로 꼽히는"], example: "She is numbered among the greatest scientists of the twentieth century.", exampleKr: "그녀는 20세기 가장 위대한 과학자 중 한 명으로 꼽힌다." },
+      // AROUND (4 단어)
+      { word: "around the clock",    pron: "/əˈraʊnd ðə klɒk/",       pos: "prep.ph.", meanings: ["24시간 내내", "쉬지 않고"], example: "The emergency response team worked around the clock to contain the chemical leak.", exampleKr: "비상 대응팀은 화학 물질 누출을 막기 위해 24시간 내내 일했다." },
+      { word: "around the corner",   pron: "/əˈraʊnd ðə ˈkɔːrnər/",   pos: "prep.ph.", meanings: ["코앞에 다가온", "가까이에"], example: "With the semester around the corner, students are rushing to register for courses.", exampleKr: "학기가 코앞에 다가오면서, 학생들이 서둘러 강의를 등록하고 있다." },
+      { word: "get around",          pron: "/ɡet əˈraʊnd/",            pos: "prep.ph.", meanings: ["돌아다니다", "피해나가다"], example: "It is difficult to get around the new regulation without violating company policy.", exampleKr: "회사 규정을 위반하지 않고 새 규제를 피해 나가기는 어렵다." },
+      { word: "turn around",         pron: "/tɜːrn əˈraʊnd/",          pos: "prep.ph.", meanings: ["반전시키다", "돌리다"], example: "The new CEO managed to turn around the struggling company within just two years.", exampleKr: "새 CEO는 단 2년 만에 어려움을 겪고 있는 회사를 반전시키는 데 성공했다." },
+      // 복합 (4 단어)
+      { word: "between and among",   pron: "/bɪˈtwiːn ənd əˈmʌŋ/",   pos: "prep.ph.", meanings: ["~사이 또는 무리 중에"], example: "Communication between and among departments improved significantly after the restructuring.", exampleKr: "구조 조정 후 부서 간 및 부서 내 소통이 크게 향상되었다." },
+      { word: "somewhere around",    pron: "/ˈsʌmwer əˈraʊnd/",       pos: "prep.ph.", meanings: ["약 ~쯤에", "어딘가 ~근처에"], example: "The repair bill came out to somewhere around two thousand dollars, which shocked the owner.", exampleKr: "수리비가 약 2천 달러 정도 나왔고, 이는 주인에게 충격이었다." },
+      { word: "right around",        pron: "/raɪt əˈraʊnd/",           pos: "prep.ph.", meanings: ["바로 ~즈음에", "딱 ~쯤에"], example: "The package should arrive right around the end of next week if we ship it today.", exampleKr: "오늘 발송하면 소포가 다음 주 말 즈음에 도착할 것이다." },
+      { word: "come between",        pron: "/kʌm bɪˈtwiːn/",           pos: "prep.ph.", meanings: ["사이를 갈라놓다", "방해하다"], example: "She refused to let work pressures come between her and her family priorities.", exampleKr: "그녀는 업무 압박이 가족을 대한 우선순위와 자신 사이를 방해하도록 두지 않았다." },
+      { word: "fall among",          pron: "/fɔːl əˈmʌŋ/",             pos: "prep.ph.", meanings: ["~무리에 끼다", "~속에 떨어지다"], example: "The young traveller was warned not to fall among strangers with dubious intentions.", exampleKr: "그 젊은 여행자는 의심스러운 의도를 가진 낯선 사람들 무리에 끼지 말라는 경고를 받았다." },
+      { word: "wrapped around",      pron: "/ræpt əˈraʊnd/",           pos: "prep.ph.", meanings: ["둘러싼", "집착하는"], example: "The ivy is completely wrapped around the old stone walls of the historic building.", exampleKr: "담쟁이덩굴이 그 역사적인 건물의 낡은 석조 벽을 완전히 둘러싸고 있다." },
+      { word: "spread among",        pron: "/spred əˈmʌŋ/",            pos: "prep.ph.", meanings: ["~사이에 퍼지다", "~중에 배분되다"], example: "The responsibility for the project should be spread among all team members equally.", exampleKr: "프로젝트에 대한 책임은 모든 팀원들 사이에 고르게 배분되어야 한다." },
+      { word: "round around",        pron: "/raʊnd əˈraʊnd/",          pos: "prep.ph.", meanings: ["이리저리", "두루두루"], example: "The mentor travels round around the country giving talks to inspire young entrepreneurs.", exampleKr: "그 멘토는 젊은 기업가들에게 영감을 주기 위해 강연을 하며 전국을 이리저리 다닌다." }
+    ]
+  },
+
+  // ─── Day 208: 전치사 BEFORE / AFTER / DURING — 핵심 이미지 '시간 관계' ───
+  //   BEFORE → 선행(先) : 어떤 사건보다 앞
+  //   AFTER  → 후속(後) : 어떤 사건보다 뒤
+  //   DURING → 동시(同) : 어떤 기간과 겹침
+  208: {
+    theme: "전치사 BEFORE·AFTER·DURING — 시간 관계",
+    words: [
+      // BEFORE (5 단어)
+      { word: "before long",        pron: "/bɪˈfɔːr lɒŋ/",         pos: "prep.ph.", meanings: ["머지않아", "곧"], example: "If you keep practising every day, you will speak fluently before long.", exampleKr: "매일 연습을 계속하면, 머지않아 유창하게 말할 수 있을 것이다." },
+      { word: "before hand",        pron: "/bɪˈfɔːr hænd/",         pos: "prep.ph.", meanings: ["미리", "사전에"], example: "Please notify the hotel beforehand if you expect to arrive after midnight.", exampleKr: "자정 이후에 도착할 예정이라면 사전에 호텔에 알려주세요." },
+      { word: "never before",       pron: "/ˈnevər bɪˈfɔːr/",       pos: "prep.ph.", meanings: ["이전에는 한 번도", "이토록"], example: "Never before had the research team achieved such a dramatic breakthrough in a single year.", exampleKr: "연구팀이 한 해에 이처럼 극적인 돌파구를 이룬 적은 이전에 한 번도 없었다." },
+      { word: "right before",       pron: "/raɪt bɪˈfɔːr/",         pos: "prep.ph.", meanings: ["바로 직전에"], example: "She revised her notes right before the exam to reinforce what she had studied.", exampleKr: "그녀는 공부한 내용을 강화하기 위해 시험 바로 직전에 메모를 복습했다." },
+      { word: "just before",        pron: "/dʒʌst bɪˈfɔːr/",        pos: "prep.ph.", meanings: ["바로 ~전에", "직전에"], example: "The power cut out just before the final presentation was due to start.", exampleKr: "정전이 최종 발표가 시작되기 바로 직전에 일어났다." },
+      // AFTER (5 단어)
+      { word: "after all",          pron: "/ˈɑːftər ɔːl/",           pos: "prep.ph.", meanings: ["결국", "어쨌든"], example: "She decided to attend the conference after all, since the main speaker was confirmed.", exampleKr: "주요 발표자가 확정되었기 때문에 결국 그녀는 회의에 참석하기로 결정했다." },
+      { word: "after hours",        pron: "/ˈɑːftər ˈaʊərz/",        pos: "prep.ph.", meanings: ["업무 시간 후에", "방과 후에"], example: "The development team often collaborates after hours to meet tight project deadlines.", exampleKr: "개발팀은 촉박한 프로젝트 마감일을 맞추기 위해 종종 업무 시간 후에 협업한다." },
+      { word: "soon after",         pron: "/suːn ˈɑːftər/",           pos: "prep.ph.", meanings: ["~직후에", "얼마 지나지 않아"], example: "She landed a senior position soon after completing her MBA programme.", exampleKr: "그녀는 MBA 프로그램을 마친 후 얼마 지나지 않아 고위직을 얻었다." },
+      { word: "one after another",  pron: "/wʌn ˈɑːftər əˈnʌðər/",  pos: "prep.ph.", meanings: ["차례차례", "잇달아"], example: "Problems arose one after another, testing the team's resilience and problem-solving skills.", exampleKr: "문제들이 잇달아 발생하여 팀의 회복력과 문제 해결 능력을 시험했다." },
+      { word: "look after",         pron: "/lʊk ˈɑːftər/",           pos: "prep.ph.", meanings: ["돌보다", "관리하다"], example: "She asked a trusted neighbour to look after her cat while she was travelling abroad.", exampleKr: "그녀는 해외여행 중에 믿을 수 있는 이웃에게 고양이를 돌봐달라고 부탁했다." },
+      // DURING (5 단어)
+      { word: "during the day",     pron: "/ˈdjʊərɪŋ ðə deɪ/",      pos: "prep.ph.", meanings: ["낮 동안", "주간에"], example: "Noise from construction is only permitted during the day to avoid disturbing residents.", exampleKr: "소음이 주민들을 방해하지 않도록 공사 소음은 낮 시간에만 허용된다." },
+      { word: "during the week",    pron: "/ˈdjʊərɪŋ ðə wiːk/",     pos: "prep.ph.", meanings: ["주중에", "평일에"], example: "Most of the administrative work is completed during the week so weekends stay free.", exampleKr: "대부분의 행정 업무는 주중에 완료되어 주말은 자유로운 상태를 유지한다." },
+      { word: "during that time",   pron: "/ˈdjʊərɪŋ ðæt taɪm/",    pos: "prep.ph.", meanings: ["그 기간 동안", "그때"], example: "The company doubled its revenue; during that time, the workforce tripled as well.", exampleKr: "회사는 수익을 두 배로 늘렸고; 그 기간 동안 인력도 세 배로 늘었다." },
+      { word: "at some point during", pron: "/æt sʌm pɔɪnt ˈdjʊərɪŋ/", pos: "prep.ph.", meanings: ["~하는 중 어느 시점에"], example: "At some point during the negotiation, both sides agreed to make mutual concessions.", exampleKr: "협상 중 어느 시점에, 양측은 상호 양보하기로 합의했다." },
+      { word: "during one's lifetime", pron: "/ˈdjʊərɪŋ wʌnz ˈlaɪftaɪm/", pos: "prep.ph.", meanings: ["일생 동안", "살아있는 동안"], example: "The scientist was never fully recognised during his lifetime for his revolutionary theories.", exampleKr: "그 과학자는 살아있는 동안 그의 혁명적인 이론으로 충분히 인정받지 못했다." },
+      // BEFORE/AFTER/DURING 복합 (5 단어 — 비교 표현)
+      { word: "before and after",   pron: "/bɪˈfɔːr ənd ˈɑːftər/",  pos: "prep.ph.", meanings: ["전후로", "변화 전후"], example: "The before and after photos clearly showed the dramatic results of the renovation.", exampleKr: "리노베이션 전후 사진은 극적인 결과를 명확하게 보여주었다." },
+      { word: "after the fact",     pron: "/ˈɑːftər ðə fækt/",       pos: "prep.ph.", meanings: ["사후에", "이미 벌어진 후에"], example: "Criticising the plan after the fact is easy; suggesting improvements beforehand is better.", exampleKr: "사후에 계획을 비판하기는 쉽다; 사전에 개선점을 제안하는 것이 더 낫다." },
+      { word: "during the course of", pron: "/ˈdjʊərɪŋ ðə kɔːrs əv/", pos: "prep.ph.", meanings: ["~과정에서", "~기간 내에"], example: "Several unexpected issues arose during the course of the six-month research project.", exampleKr: "6개월간의 연구 프로젝트 과정에서 몇 가지 예상치 못한 문제가 발생했다." },
+      { word: "before you know it", pron: "/bɪˈfɔːr juː noʊ ɪt/",    pos: "prep.ph.", meanings: ["어느새", "금방"], example: "Start learning a little each day and before you know it, you will be fluent.", exampleKr: "매일 조금씩 배우기 시작하면 어느새 유창하게 말할 수 있게 될 것이다." },
+      { word: "after a while",      pron: "/ˈɑːftər ə waɪl/",         pos: "prep.ph.", meanings: ["잠시 후에", "얼마 뒤에"], example: "After a while, the noise from the street gradually faded and silence returned.", exampleKr: "잠시 후에, 거리의 소음이 점차 사그라지고 고요함이 돌아왔다." },
+      { word: "during off-hours",   pron: "/ˈdjʊərɪŋ ˈɒf ˌaʊərz/",  pos: "prep.ph.", meanings: ["비업무 시간에", "오프타임에"], example: "System maintenance is scheduled during off-hours to minimise disruption to users.", exampleKr: "사용자 불편을 최소화하기 위해 시스템 유지 보수는 비업무 시간에 예정되어 있다." }
+    ]
+  },
+
+  // ─── Day 209: 전치사 THROUGH / ACROSS / ALONG — 핵심 이미지 '통과·경로' ───
+  //   THROUGH → 관통(貫) : 시작→끝을 꿰뚫음
+  //   ACROSS  → 횡단(橫) : 표면을 가로질러
+  //   ALONG   → 연변(沿) : 선을 따라 이동
+  209: {
+    theme: "전치사 THROUGH·ACROSS·ALONG — 통과·경로",
+    words: [
+      // THROUGH (5 단어)
+      { word: "go through",         pron: "/ɡoʊ θruː/",              pos: "prep.ph.", meanings: ["겪다", "통과하다"], example: "She had to go through a rigorous background check before receiving security clearance.", exampleKr: "그녀는 보안 허가를 받기 전에 엄격한 신원 조회를 통과해야 했다." },
+      { word: "through and through", pron: "/θruː ənd θruː/",         pos: "prep.ph.", meanings: ["완전히", "속속들이"], example: "He is a dedicated educator through and through, always putting his students first.", exampleKr: "그는 속속들이 헌신적인 교육자로, 항상 학생들을 가장 먼저 생각한다." },
+      { word: "get through",        pron: "/ɡet θruː/",               pos: "prep.ph.", meanings: ["통과하다", "해내다"], example: "It was tough, but the team managed to get through the most challenging phase of the project.", exampleKr: "힘들었지만, 팀은 프로젝트의 가장 도전적인 단계를 해낼 수 있었다." },
+      { word: "see through",        pron: "/siː θruː/",               pos: "prep.ph.", meanings: ["꿰뚫어 보다", "완결하다"], example: "An experienced negotiator can see through empty promises and vague assurances.", exampleKr: "노련한 협상가는 빈 약속과 막연한 보장을 꿰뚫어 볼 수 있다." },
+      { word: "fall through",       pron: "/fɔːl θruː/",              pos: "prep.ph.", meanings: ["무산되다", "실패로 끝나다"], example: "The merger deal fell through at the last minute due to regulatory concerns.", exampleKr: "합병 거래가 규제 우려로 막판에 무산되었다." },
+      // ACROSS (5 단어)
+      { word: "come across",        pron: "/kʌm əˈkrɒs/",            pos: "prep.ph.", meanings: ["우연히 만나다", "인상을 주다"], example: "She came across an old letter tucked away at the back of a forgotten drawer.", exampleKr: "그녀는 잊혀진 서랍 뒤쪽에 끼워진 낡은 편지를 우연히 발견했다." },
+      { word: "across the board",   pron: "/əˈkrɒs ðə bɔːrd/",      pos: "prep.ph.", meanings: ["전반적으로", "모든 분야에서"], example: "The company announced a ten percent salary increase across the board effective next month.", exampleKr: "회사는 다음 달부터 전 직원을 대상으로 10% 급여 인상을 발표했다." },
+      { word: "get across",         pron: "/ɡet əˈkrɒs/",             pos: "prep.ph.", meanings: ["전달하다", "이해시키다"], example: "The key challenge is to get the core message across in under thirty seconds.", exampleKr: "핵심 과제는 30초 이내에 핵심 메시지를 전달하는 것이다." },
+      { word: "across the country", pron: "/əˈkrɒs ðə ˈkʌntri/",    pos: "prep.ph.", meanings: ["전국에 걸쳐", "전국적으로"], example: "The awareness campaign reached millions of households across the country.", exampleKr: "그 인식 제고 캠페인은 전국의 수백만 가구에 전달되었다." },
+      { word: "cut across",         pron: "/kʌt əˈkrɒs/",             pos: "prep.ph.", meanings: ["가로지르다", "초월하다"], example: "The appeal of great music cuts across cultural and language barriers worldwide.", exampleKr: "훌륭한 음악의 매력은 전 세계의 문화적·언어적 장벽을 초월한다." },
+      // ALONG (5 단어)
+      { word: "along the way",      pron: "/əˈlɒŋ ðə weɪ/",          pos: "prep.ph.", meanings: ["도중에", "과정에서"], example: "He made many valuable friendships along the way during his years abroad.", exampleKr: "그는 해외에서 보낸 수년 동안 도중에 많은 소중한 우정을 쌓았다." },
+      { word: "come along",         pron: "/kʌm əˈlɒŋ/",              pos: "prep.ph.", meanings: ["함께 오다", "나타나다"], example: "A rare opportunity like this doesn't come along every day, so seize it now.", exampleKr: "이런 드문 기회가 매일 나타나는 것이 아니니, 지금 잡으세요." },
+      { word: "get along",          pron: "/ɡet əˈlɒŋ/",              pos: "prep.ph.", meanings: ["잘 지내다", "사이좋게 지내다"], example: "The new intern got along well with all the team members from the very first day.", exampleKr: "새 인턴은 첫날부터 모든 팀원들과 잘 지냈다." },
+      { word: "along those lines",  pron: "/əˈlɒŋ ðoʊz laɪnz/",     pos: "prep.ph.", meanings: ["그런 맥락에서", "그런 방향으로"], example: "I was thinking perhaps a weekend retreat — or something along those lines — for the team.", exampleKr: "팀을 위해 주말 워크숍이나, 그런 맥락에서 비슷한 무언가를 생각하고 있었어요." },
+      { word: "bring along",        pron: "/brɪŋ əˈlɒŋ/",             pos: "prep.ph.", meanings: ["함께 가져오다", "데려오다"], example: "Please bring along any supporting documents when you attend the interview tomorrow.", exampleKr: "내일 면접에 참석할 때 관련 서류들을 함께 가져오세요." },
+      // THROUGH/ACROSS/ALONG 복합 (5 단어)
+      { word: "follow through",     pron: "/ˈfɒloʊ θruː/",            pos: "prep.ph.", meanings: ["끝까지 해내다", "완수하다"], example: "The most important quality is to follow through on every commitment you make.", exampleKr: "가장 중요한 자질은 당신이 한 모든 약속을 끝까지 완수하는 것이다." },
+      { word: "spread across",      pron: "/spred əˈkrɒs/",           pos: "prep.ph.", meanings: ["~에 걸쳐 퍼지다", "광범위하게"], example: "News of the scientific discovery spread across the globe within hours of publication.", exampleKr: "과학적 발견 소식이 발표 몇 시간 만에 전 세계에 퍼졌다." },
+      { word: "move along",         pron: "/muːv əˈlɒŋ/",             pos: "prep.ph.", meanings: ["계속 나아가다", "진행하다"], example: "Let us move along to the next agenda item and discuss the budget proposals.", exampleKr: "다음 안건으로 계속 나아가 예산 제안을 논의합시다." },
+      { word: "halfway through",    pron: "/ˈhɑːfweɪ θruː/",          pos: "prep.ph.", meanings: ["절반쯤 지나", "중간쯤에"], example: "Halfway through the presentation, the speaker realised the data slides were missing.", exampleKr: "발표 절반쯤에, 발표자는 데이터 슬라이드가 빠져 있다는 것을 알아챘다." },
+      { word: "pass through",       pron: "/pæs θruː/",               pos: "prep.ph.", meanings: ["통과하다", "잠시 들르다"], example: "We will briefly pass through Milan before continuing on to our final destination in Rome.", exampleKr: "로마로 가는 최종 목적지로 계속 가기 전에 밀라노를 잠시 통과할 것이다." }
+    ]
+  },
+
+  // ─── Day 210: 전치사 AGAINST / DESPITE / WITHOUT — 핵심 이미지 '대립·양보·부재' ───
+  //   AGAINST → 대항(對) : 반대, 저항, 기댐
+  //   DESPITE → 양보(讓) : ~에도 불구하고
+  //   WITHOUT → 부재(無) : ~없이, 결여
+  210: {
+    theme: "전치사 AGAINST·DESPITE·WITHOUT — 대립·양보·부재",
+    words: [
+      // AGAINST (5 단어)
+      { word: "against all odds",   pron: "/əˈɡenst ɔːl ɒdz/",      pos: "prep.ph.", meanings: ["역경을 딛고", "불리함에도"], example: "Against all odds, the underdog team won the championship in a dramatic final match.", exampleKr: "모든 역경을 딛고, 약체 팀이 극적인 결승전에서 챔피언십을 차지했다." },
+      { word: "go against",         pron: "/ɡoʊ əˈɡenst/",           pos: "prep.ph.", meanings: ["반하다", "어기다"], example: "Acting dishonestly goes against everything this company stands for and values.", exampleKr: "부정직하게 행동하는 것은 이 회사가 지향하고 소중히 여기는 모든 것에 반한다." },
+      { word: "work against",       pron: "/wɜːrk əˈɡenst/",         pos: "prep.ph.", meanings: ["불리하게 작용하다", "방해하다"], example: "Poor time management and procrastination work against long-term career success.", exampleKr: "시간 관리 부족과 미루는 습관은 장기적인 경력 성공에 불리하게 작용한다." },
+      { word: "stand against",      pron: "/stænd əˈɡenst/",         pos: "prep.ph.", meanings: ["반대 입장을 취하다", "저항하다"], example: "The human rights group stood firmly against the proposed changes to asylum law.", exampleKr: "인권 단체는 망명법의 제안된 변경에 단호히 반대 입장을 취했다." },
+      { word: "up against",         pron: "/ʌp əˈɡenst/",             pos: "prep.ph.", meanings: ["~에 직면하여", "힘든 상황에서"], example: "The rescue team was up against the clock trying to locate survivors in the debris.", exampleKr: "구조대는 잔해 속에서 생존자를 찾기 위해 시간과 싸우는 상황에 직면해 있었다." },
+      // DESPITE (5 단어)
+      { word: "despite everything",  pron: "/dɪˈspaɪt ˈevriθɪŋ/",   pos: "prep.ph.", meanings: ["모든 것에도 불구하고"], example: "Despite everything that happened, she maintained her professionalism throughout.", exampleKr: "일어난 모든 것에도 불구하고, 그녀는 내내 전문적인 태도를 유지했다." },
+      { word: "despite the fact",    pron: "/dɪˈspaɪt ðə fækt/",     pos: "prep.ph.", meanings: ["~라는 사실에도 불구하고"], example: "Despite the fact that deadlines were missed, the final product exceeded expectations.", exampleKr: "마감일이 지나쳐진 사실에도 불구하고, 최종 제품은 기대를 뛰어넘었다." },
+      { word: "despite oneself",     pron: "/dɪˈspaɪt wʌnˈself/",    pos: "prep.ph.", meanings: ["자신도 모르게", "의도치 않게"], example: "She found herself laughing despite herself at the absurd situation she was in.", exampleKr: "그녀는 자신이 처한 터무니없는 상황에 자신도 모르게 웃음이 나왔다." },
+      { word: "despite appearances", pron: "/dɪˈspaɪt əˈpɪərənsɪz/", pos: "prep.ph.", meanings: ["겉보기와 달리", "외견상과는 반대로"], example: "Despite appearances, the project was running smoothly and on target behind the scenes.", exampleKr: "겉보기와 달리, 프로젝트는 물밑에서 순조롭게 진행되고 있었으며 목표를 향해 나아가고 있었다." },
+      { word: "despite the odds",    pron: "/dɪˈspaɪt ðə ɒdz/",      pos: "prep.ph.", meanings: ["불리한 상황에도 불구하고"], example: "Despite the odds, the first-time author's novel became an overnight bestseller.", exampleKr: "불리한 상황에도 불구하고, 첫 소설가의 소설이 하룻밤 사이에 베스트셀러가 되었다." },
+      // WITHOUT (5 단어)
+      { word: "without hesitation",  pron: "/wɪˈðaʊt ˌhezɪˈteɪʃən/", pos: "prep.ph.", meanings: ["망설임 없이", "즉각"], example: "When asked if she would take on the challenge, she agreed without hesitation.", exampleKr: "도전을 맡겠냐는 질문을 받았을 때, 그녀는 망설임 없이 동의했다." },
+      { word: "without a doubt",     pron: "/wɪˈðaʊt ə daʊt/",        pos: "prep.ph.", meanings: ["의심할 여지 없이", "확실히"], example: "This is without a doubt the most innovative product the company has ever launched.", exampleKr: "이것은 의심할 여지 없이 회사가 출시한 가장 혁신적인 제품이다." },
+      { word: "without notice",      pron: "/wɪˈðaʊt ˈnoʊtɪs/",      pos: "prep.ph.", meanings: ["통보 없이", "예고 없이"], example: "The factory shut down without notice, leaving hundreds of workers suddenly unemployed.", exampleKr: "공장이 통보 없이 폐쇄되어, 수백 명의 노동자들이 갑자기 실직 상태가 되었다." },
+      { word: "without question",    pron: "/wɪˈðaʊt ˈkwestʃən/",     pos: "prep.ph.", meanings: ["의문의 여지 없이", "당연히"], example: "He is without question the most knowledgeable expert in the field of renewable energy.", exampleKr: "그는 의문의 여지 없이 재생 에너지 분야에서 가장 박식한 전문가이다." },
+      { word: "without exception",   pron: "/wɪˈðaʊt ɪkˈsepʃən/",    pos: "prep.ph.", meanings: ["예외 없이", "모두"], example: "All employees, without exception, are required to complete the annual safety training.", exampleKr: "모든 직원은 예외 없이 연간 안전 교육을 이수해야 한다." },
+      // 복합 (5 단어)
+      { word: "not without reason",  pron: "/nɒt wɪˈðaʊt ˈriːzən/",  pos: "prep.ph.", meanings: ["이유 없이는 아닌", "그럴 만한 이유로"], example: "She was concerned about the new policy, and not without reason — the risks were real.", exampleKr: "그녀는 새 정책에 대해 우려했으며, 그럴 만한 이유도 있었다 — 위험이 실제로 존재했다." },
+      { word: "against the odds",    pron: "/əˈɡenst ðə ɒdz/",        pos: "prep.ph.", meanings: ["역경에 맞서", "불리함을 극복하고"], example: "Against the odds, the startup secured its Series B funding during an economic downturn.", exampleKr: "역경에 맞서, 그 스타트업은 경기 침체 중에 시리즈 B 투자를 확보했다." },
+      { word: "despite all efforts",  pron: "/dɪˈspaɪt ɔːl ˈefərts/",  pos: "prep.ph.", meanings: ["모든 노력에도 불구하고"], example: "Despite all efforts, the two sides failed to reach a consensus before the deadline.", exampleKr: "모든 노력에도 불구하고, 양측은 마감일 전에 합의에 이르지 못했다." },
+      { word: "without a hitch",     pron: "/wɪˈðaʊt ə hɪtʃ/",        pos: "prep.ph.", meanings: ["순조롭게", "차질 없이"], example: "The international product launch went off without a hitch thanks to months of preparation.", exampleKr: "수개월의 준비 덕분에 국제 제품 출시가 차질 없이 진행되었다." },
+      { word: "against the grain",   pron: "/əˈɡenst ðə ɡreɪn/",      pos: "prep.ph.", meanings: ["본성에 거슬러", "관행에 반하여"], example: "Accepting compromise goes against the grain for someone with such strong convictions.", exampleKr: "그처럼 강한 신념을 가진 사람에게 타협을 받아들이는 것은 본성에 거슬리는 일이다." }
+    ]
   }
 });
