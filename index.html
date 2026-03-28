@@ -48,8 +48,26 @@
         </div>
         <div class="stat-divider">/</div>
         <div class="stat-item">
-          <span class="stat-num">4,000</span>
+          <span class="stat-num">4,200</span>
           <span class="stat-label">전체 단어</span>
+        </div>
+      </div>
+
+      <!-- Day 바로가기 (헤더 우측) -->
+      <div class="header-dayjump" id="headerDayJump">
+        <button class="hdj-btn" id="hdjBtn" title="원하는 Day로 바로 이동">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span id="hdjLabel">Day 1</span>
+        </button>
+        <div class="hdj-panel" id="hdjPanel" hidden>
+          <div class="hdj-panel-title">📅 Day 바로가기</div>
+          <div class="hdj-input-row">
+            <input type="number" id="hdjInput" class="hdj-input" min="1" max="210" placeholder="Day 번호 (1~210)" />
+            <button class="hdj-go" id="hdjGoBtn">이동</button>
+          </div>
+          <select id="hdjSelect" class="hdj-select">
+            <option value="">— 테마로 선택 —</option>
+          </select>
         </div>
       </div>
 
@@ -121,6 +139,11 @@
                 <polyline points="15 18 9 12 15 6"/>
               </svg>
             </button>
+            <div class="day-jump-inline" id="dayJumpInline">
+              <select id="dayJumpSelect" class="day-jump-select" title="Day 선택">
+                <!-- JS로 동적 생성 -->
+              </select>
+            </div>
             <button class="nav-btn" id="nextDayBtn" title="다음 날">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="9 18 15 12 9 6"/>

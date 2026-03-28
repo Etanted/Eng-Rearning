@@ -1384,3 +1384,169 @@ ul, ol { list-style: none; }
   .wl-table th, .wl-table td { padding: 7px 8px; font-size: 12px; }
   .wl-word        { font-size: 13px; }
 }
+
+/* =========================================================
+   헤더 Day 바로가기 위젯
+   ========================================================= */
+.header-dayjump {
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* 트리거 버튼 */
+.hdj-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+  background: var(--primary-light);
+  border: 1.5px solid var(--primary);
+  border-radius: 20px;
+  padding: 5px 14px;
+  white-space: nowrap;
+  transition: all var(--transition);
+}
+.hdj-btn:hover {
+  background: var(--primary);
+  color: #fff;
+}
+.hdj-btn svg { flex-shrink: 0; }
+
+/* 드롭다운 패널 */
+.hdj-panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: 16px;
+  min-width: 260px;
+  z-index: 200;
+  animation: fadeInDown .18s ease;
+}
+.hdj-panel[hidden] { display: none; }
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hdj-panel-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.hdj-input-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.hdj-input {
+  flex: 1;
+  padding: 7px 12px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.hdj-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+/* number 입력 spin 버튼 스타일링 */
+.hdj-input::-webkit-inner-spin-button { opacity: .6; }
+
+.hdj-go {
+  padding: 7px 14px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  white-space: nowrap;
+  transition: background var(--transition);
+}
+.hdj-go:hover { background: var(--primary-dark); }
+
+.hdj-select {
+  width: 100%;
+  padding: 7px 32px 7px 12px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-family: inherit;
+  color: var(--text-primary);
+  background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23475569' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E") no-repeat right 10px center;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.hdj-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+/* =========================================================
+   학습 탭 — Day 인라인 Jump Select (이전/다음 버튼 사이)
+   ========================================================= */
+.day-jump-inline {
+  flex: 1;
+  min-width: 0;
+  max-width: 200px;
+}
+.day-jump-select {
+  width: 100%;
+  padding: 6px 26px 6px 10px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 12px;
+  font-family: inherit;
+  font-weight: 600;
+  color: var(--primary);
+  background: var(--primary-light) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%231a73e8' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E") no-repeat right 8px center;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.day-jump-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+/* day-nav에서 inline jump를 포함하면 flex로 처리 */
+.day-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ── 반응형 ── */
+
+/* 태블릿 이하 (768px): 헤더에서 Day 바로가기 숨기지 않음, 단 크기 조정 */
+@media (max-width: 768px) {
+  .header-dayjump { display: none; }   /* 모바일: 헤더 Day 바로가기는 숨기고 인라인만 사용 */
+  .day-jump-inline { max-width: 140px; }
+  .day-jump-select { font-size: 11px; padding: 5px 22px 5px 8px; }
+}
+
+@media (max-width: 480px) {
+  .day-jump-inline { max-width: 110px; }
+  .day-jump-select { font-size: 11px; }
+}
+

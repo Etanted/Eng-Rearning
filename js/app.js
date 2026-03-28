@@ -27,6 +27,9 @@ const App = (() => {
     const saved = parseInt(localStorage.getItem('eng_learning_last_day') || '1', 10);
     currentDay = (saved >= 1 && saved <= TOTAL_DAYS) ? saved : 1;
 
+    // Day 바로가기 select 목록 초기화 (헤더 + 인라인)
+    buildDayJumpSelects();
+
     // 최초 렌더
     render(currentDay);
     UI.updateGlobalProgress();
@@ -56,6 +59,16 @@ const App = (() => {
     if (prevBtn) prevBtn.disabled = day <= 1;
     if (nextBtn) nextBtn.disabled = day >= TOTAL_DAYS;
 
+    // 헤더 Day 바로가기 레이블 동기화
+    const hdjLabel = document.getElementById('hdjLabel');
+    if (hdjLabel) hdjLabel.textContent = `Day ${day}`;
+    const hdjSelect = document.getElementById('hdjSelect');
+    if (hdjSelect) hdjSelect.value = String(day);
+
+    // 인라인 Day Jump select 동기화
+    const djSelect = document.getElementById('dayJumpSelect');
+    if (djSelect) djSelect.value = String(day);
+
     // 현재 Day 저장
     localStorage.setItem('eng_learning_last_day', day);
 
@@ -64,9 +77,87 @@ const App = (() => {
   }
 
   /* ─────────────────────────────────────────
+     Day 바로가기 select 목록 초기화
+  ───────────────────────────────────────── */
+  function buildDayJumpSelects() {
+    const hdjSelect = document.getElementById('hdjSelect');
+    const djSelect  = document.getElementById('dayJumpSelect');
+
+    let optionsHtml = '';
+    for (let d = 1; d <= TOTAL_DAYS; d++) {
+      const th = VOCA_DATA[d]?.theme || '';
+      optionsHtml += `<option value="${d}">Day ${d}${th ? ' — ' + th : ''}</option>`;
+    }
+
+    // 헤더 select (첫 placeholder 옵션 유지)
+    if (hdjSelect) {
+      const firstOpt = hdjSelect.querySelector('option');
+      if (firstOpt) firstOpt.insertAdjacentHTML('afterend', optionsHtml);
+      else hdjSelect.innerHTML = `<option value="">— 테마로 선택 —</option>` + optionsHtml;
+    }
+
+    // 인라인 select (Day 헤더 안)
+    if (djSelect) djSelect.innerHTML = optionsHtml;
+  }
+
+  /* ─────────────────────────────────────────
      이벤트 바인딩
   ───────────────────────────────────────── */
   function bindEvents() {
+
+    /* ── 헤더 Day 바로가기 패널 열기/닫기 ── */
+    const hdjBtn   = document.getElementById('hdjBtn');
+    const hdjPanel = document.getElementById('hdjPanel');
+
+    hdjBtn?.addEventListener('click', e => {
+      e.stopPropagation();
+      const isHidden = hdjPanel.hasAttribute('hidden');
+      if (isHidden) {
+        hdjPanel.removeAttribute('hidden');
+        document.getElementById('hdjInput')?.focus();
+      } else {
+        hdjPanel.setAttribute('hidden', '');
+      }
+    });
+    document.addEventListener('click', e => {
+      if (!document.getElementById('headerDayJump')?.contains(e.target)) {
+        hdjPanel?.setAttribute('hidden', '');
+      }
+    });
+
+    /* 헤더 패널 숫자 입력 이동 */
+    const hdjInput = document.getElementById('hdjInput');
+    function hdjGoByInput() {
+      const val = parseInt(hdjInput?.value, 10);
+      if (val >= 1 && val <= TOTAL_DAYS) {
+        currentDay = val;
+        hdjPanel?.setAttribute('hidden', '');
+        switchToTab('study');
+        render(currentDay);
+      }
+    }
+    document.getElementById('hdjGoBtn')?.addEventListener('click', hdjGoByInput);
+    hdjInput?.addEventListener('keydown', e => { if (e.key === 'Enter') hdjGoByInput(); });
+
+    /* 헤더 패널 선택박스 이동 */
+    document.getElementById('hdjSelect')?.addEventListener('change', e => {
+      const val = parseInt(e.target.value, 10);
+      if (val >= 1 && val <= TOTAL_DAYS) {
+        currentDay = val;
+        hdjPanel?.setAttribute('hidden', '');
+        switchToTab('study');
+        render(currentDay);
+      }
+    });
+
+    /* ── 인라인 Day Jump Select (Day 헤더 안) ── */
+    document.getElementById('dayJumpSelect')?.addEventListener('change', e => {
+      const val = parseInt(e.target.value, 10);
+      if (val >= 1 && val <= TOTAL_DAYS) {
+        currentDay = val;
+        render(currentDay);
+      }
+    });
 
     /* 사이드바 Day 클릭 (이벤트 위임) */
     document.getElementById('dayList')?.addEventListener('click', e => {
@@ -148,6 +239,7 @@ const App = (() => {
       if (e.key === 'Escape') {
         UI.closeWordModal();
         UI.closeSidebar();
+        document.getElementById('hdjPanel')?.setAttribute('hidden', '');
       }
     });
 
